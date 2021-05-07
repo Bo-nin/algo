@@ -1,4 +1,4 @@
-import time
+# import time
 
 
 n = int(input())
@@ -15,24 +15,24 @@ orders = [list(input().split()) for _ in range(l)]
 #상우하좌
 directions = [[-1,0],[0,1],[1,0],[0,-1]]
 directionIndex = 1
-second = 1
-print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
-for game in gamePan:
-  print(*game)
-print ('press \'enter\' to start')
-input()
+second = 0
+# print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
+# for game in gamePan:
+#   print(*game)
+# print ('press \'enter\' to start')
+# input()
 while(1):
-  print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
-  for game in gamePan:
-    print(*game)
-  print(second)
+  # print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
+  # for game in gamePan:
+  #   print(*game)
+  # print(f'---SNAKE---\n score: {second}')
   second += 1
   snakeBody.append([snakeBody[-1][0]+directions[directionIndex][0], snakeBody[-1][1]+directions[directionIndex][1]])
   y,x = snakeBody[-1][0],snakeBody[-1][1]
   if gamePan[y][x] == '■' or gamePan[y][x] == '▲':
     gamePan[y][x] ='X'
     break
-  elif gamePan[y][x] == '□':
+  if not gamePan[y][x] == '♠':
     delY, delX = snakeBody.pop(0)
     gamePan[delY][delX] = '□'
   gamePan[y][x] = '▲'
@@ -49,17 +49,10 @@ while(1):
         directionIndex = 0
     orders.pop(0)
   
-  time.sleep(0.4)
-time.sleep(0.4)
-print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
-for game in gamePan:
-  print(*game)
-print(f'---GAMEOVER---\n score: {second}')
-
-
-
-
-
-# #맵보기
+#   time.sleep(0.6)
+# time.sleep(0.6)
+# print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
 # for game in gamePan:
 #   print(*game)
+# print(f'---GAMEOVER---\n score: {second}')
+print(second)

@@ -10,6 +10,6 @@ for scores in arr:
     if score > avg:
       count += 1
   res = f'{round(count/scores[0]*100,3)}'
-  while(len(res) < 6):
+  while(len(res.split('.')[1]) < 3):
     res += '0'
   print(f'{res}%')
