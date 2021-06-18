@@ -39,12 +39,15 @@ ess.sort(reverse=True)
 
 # Kruskal 알고리즘 e log e
 
+
+# 경로 압축하기
 def findUnion(u, a):
   if (u[a] == a):
     return a
   u[a] = findUnion(u, u[a])
   return u[a]
 
+# 낮은랭크가 하위유니온으로 들어오게 하기
 def union(u, rank, a, b):
   a, b = findUnion(u, a), findUnion(u, b)
   if a == b :
