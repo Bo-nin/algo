@@ -4,7 +4,7 @@
 
 n, s = list(map(int, input().split()))
 numList = list(map(int, input().split()))
-pSum = 0
+pSum = numList[0]
 l, r = 0, 1
 _min = 100001
 while(1):
@@ -13,11 +13,11 @@ while(1):
       _min = r-l
     pSum -= numList[l]
     l += 1
-  elif r == n-1:
+  elif r == n:
     break
   else:
-    r += 1
     pSum += numList[r]
+    r += 1
 if _min == 100001:
   print(0)
 else:
