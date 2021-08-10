@@ -82,7 +82,7 @@ while(play_key) :
         if block[1] > delete_block[1]:
           delete_block = block
         elif block[1] == delete_block[1]:
-          if block[2] == delete_block[2]:
+          if block[2] > delete_block[2]:
             delete_block = block
         
 
@@ -97,11 +97,11 @@ while(play_key) :
   for j in range(n):
     gravity(arr, j)
 
-  print()
-  for i in range(n):
-    print(*arr[i])
-  print()
-  print(score, delete_block[0][0]**2)
+  # print()
+  # for i in range(n):
+  #   print(*arr[i])
+  # print()
+  # print(score, delete_block[0][0]**2)
 
   tmp_arr = copy.deepcopy(arr)
 print(score)
